@@ -23,6 +23,15 @@ public partial class ListPage : ContentPage
         await App.Database.DeleteShopListAsync(slist);
         await Navigation.PopAsync();
     }
+    async void OnChooseButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new ProductPage((ShoppingList)
+       this.BindingContext)
+        {
+            BindingContext = new Product()
+        });
+
+    }
     protected override async void OnAppearing()
     {
         base.OnAppearing();

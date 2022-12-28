@@ -4,7 +4,7 @@
              x:Class="Proiect.ListPage"
              Title="ListPage">
     <StackLayout Margin="20">
-        <Editor Placeholder="Enter the description of the shopping list" Text="{Binding Description}" HeightRequest="100" />
+        <Editor Placeholder="Enter the description of the shopping list" Text="{Binding Description}" HeightRequest="50" />
         <Picker x:Name="ShopPicker" Title="Enter Shop Name"/>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -14,5 +14,13 @@
             <Button Text="Save" Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1" Text="Delete" Clicked="OnDeleteButtonClicked"/>
         </Grid>
+        <ListView x:Name="listView" Margin="20">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add/Choose Item to buy" MaximumWidthRequest="300" Clicked="OnChooseButtonClicked"/>
     </StackLayout>
 </ContentPage>
