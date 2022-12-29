@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.HomeView"
+             xmlns:templates="clr-namespace:Proiect.Templates"
+             xmlns:viewmodels="clr-namespace:Proiect.ViewModels"
+             Title="Products">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">#EBEAEF</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <viewmodels:HomeViewModel/>
+    </ContentPage.BindingContext>
+    <Grid
+        BackgroundColor="{StaticResource PageBackgroundColor}">
+ 
+        <!--product list-->
+        <ScrollView
+            Grid.Row="1">
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding Produses}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <templates:ProduseTemplate/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+            
+        </ScrollView>
+    </Grid>
+    
+
+</ContentPage>
