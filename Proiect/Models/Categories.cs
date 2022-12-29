@@ -8,7 +8,7 @@ namespace Proiect.Models
 {
     public class Categories
     {
-        public string CategoryName { get; set; }
-        public string CategoryDescription { get; set; }
+        public string CategoriesName { get; set; }
+        public string CategoriesDescription { get; set; }
     }
 }

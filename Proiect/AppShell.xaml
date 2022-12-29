@@ -9,8 +9,8 @@
     <TabBar>
         <ShellContent Title="Welcome!" ContentTemplate="{DataTemplate local:MainPage}"/>
         <ShellContent Title="Products" ContentTemplate="{DataTemplate local:HomeView}"/>
-        <ShellContent Title="Categories" ContentTemplate="{DataTemplate local:MainPage}"/>
-        <ShellContent Title="Brands" ContentTemplate="{DataTemplate local:MainPage}"/>
+        <ShellContent Title="Categories" ContentTemplate="{DataTemplate local:CategoriesView}"/>
+        <ShellContent Title="Brands" ContentTemplate="{DataTemplate local:BrandView}"/>
         <ShellContent Title="Shopping List" ContentTemplate="{DataTemplate local:ListEntryPage}"/>
         <ShellContent Title="My Shops" ContentTemplate="{DataTemplate local:ShopEntryPage}"/>
     </TabBar>

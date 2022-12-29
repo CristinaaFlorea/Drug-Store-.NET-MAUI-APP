@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.Templates.CategoriesTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CategoriesContainerStyle" TargetType="Frame">
+                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="CornerRadius" Value="24"/>
+                <Setter Property="HasShadow" Value="False"/>
+                <Setter Property="Padding" Value="8"/>
+                <Setter Property="Margin" Value="7"/>
+            </Style>
+
+            <Style x:Key="CategoriesNameTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Purple"/>
+                <Setter Property="FontSize" Value="20"/>
+                <Setter Property="FontFamily" Value="Fallingsky"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="Margin" Value="12,0"/>
+            </Style>
+
+            <Style x:Key="CategoriesDescriptionTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Opacity" Value="0.75"/>
+                <Setter Property="FontSize" Value="11"/>
+                <Setter Property="FontFamily" Value="Fallingsky"/>
+                <Setter Property="Margin" Value="12,0,0,12"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <Frame
+        Style="{StaticResource CategoriesContainerStyle}">
+        <Grid
+            RowDefinitions="*,Auto,Auto">
+            <StackLayout
+                Grid.Row="1">
+                <Label
+                    Text="{Binding CategoriesName}"
+                    Style="{StaticResource CategoriesNameTextStyle}"/>
+                <Label
+                    Text="{Binding CategoriesDescription}"
+                    Style="{StaticResource CategoriesDescriptionTextStyle}"/>
+            </StackLayout>
+        </Grid>
+    </Frame>
+</ContentView>
+

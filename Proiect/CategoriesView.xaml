@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.CategoriesView"
+             xmlns:templates="clr-namespace:Proiect.Templates"
+             xmlns:viewmodels="clr-namespace:Proiect.ViewModels"
+             Title="Categories">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">#EBEAEF</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <viewmodels:CategoriesViewModels/>
+    </ContentPage.BindingContext>
+    <Grid
+        BackgroundColor="{StaticResource PageBackgroundColor}">
+        <!--Categories list-->
+        <ScrollView
+            Grid.Row="2">
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding Categorieses}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <templates:CategoriesTemplate/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+ 
+
+</ContentPage>

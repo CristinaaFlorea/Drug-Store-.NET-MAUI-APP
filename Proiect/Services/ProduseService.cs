@@ -99,6 +99,11 @@ namespace Proiect.Services
               },
            };
         }
+
+        internal IEnumerable<object> GetCategories()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

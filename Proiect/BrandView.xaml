@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiect.BrandView"
+             xmlns:viewmodels="clr-namespace:Proiect.ViewModels"
+             xmlns:templates="clr-namespace:Proiect.Templates"
+             Title="Brands">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="PageBackgroundColor">#EBEAEF</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.BindingContext>
+        <viewmodels:BrandViewModels/>
+    </ContentPage.BindingContext>
+    <Grid
+        BackgroundColor="{StaticResource PageBackgroundColor}">
+        <!--Brands list-->
+        <ScrollView
+            Grid.Row="1">
+            <StackLayout
+                BindableLayout.ItemsSource="{Binding Brands}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <templates:BrandTemplate/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>
